@@ -9,8 +9,7 @@ topo_file = "../../data/boulder-topography.asc"
 
 def read():
     try:
-        topo = pd.read_csv(topo_file, header=None)
-    except IOError:
+        topo = pd.read_csv(topo_file, header=None)    except IOError:
         print("IOError: file '{}' cannot be read".format(topo_file))
     else:
         return topo
@@ -18,7 +17,7 @@ def read():
 
 def display(data, show=False, outfile="boulder_dem.png"):
     fig, ax = plt.subplots()
-    elev = ax.imshow(data, cmap="viridis")
+    elev = ax.imshow(data, cmap="jet")
     fig.colorbar(elev, label="Elevation (m)")
     plt.title("Boulder Topography")
 
